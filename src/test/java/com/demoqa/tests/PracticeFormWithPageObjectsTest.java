@@ -24,19 +24,18 @@ public class PracticeFormWithPageObjectsTest {
 
 //        Fill form
         practiceFormPage.openPage()
-                .setFirstName("FirstName1")
-                .setLastName("LastName1")
+                .setName("FirstName1", "LastName1")
+                .setMail("useremail1@email.com")
                 .setGender("Female")
                 .setNumber("9998887766")
-                .setBirthDate("16", "December", "1993");
-        $("#userEmail").setValue("useremail1@email.com");
-        $("#subjectsInput").setValue("English").pressEnter();
-        $("#hobbiesWrapper").$(byText("Reading")).click();
-        $("#uploadPicture").uploadFromClasspath("cat.jpg");
-        $("#currentAddress").setValue("Current Address");
-        $("#react-select-3-input").setValue("NCR").pressEnter();
-        $("#react-select-4-input").setValue("Delhi").pressEnter();
-        $("#submit").click();
+                .setBirthDate("16", "December", "1993")
+                .setSubject("English")
+                .setHobby("Reading")
+                .uploadFile("cat.jpg")
+                .setCurrentAddress("Current Address")
+                .setState("NCR")
+                .setCity("Delhi")
+                .submitForm();
 
 //        Check modal dialog
         practiceFormPage.checkTableAppearance()
@@ -58,11 +57,10 @@ public class PracticeFormWithPageObjectsTest {
 
 //        Fill form
         practiceFormPage.openPage()
-                .setFirstName("FirstName2")
-                .setLastName("LastName2")
+                .setName("FirstName2", "LastName2")
                 .setGender("Male")
-                .setNumber("9998887766");
-        $("#submit").click();
+                .setNumber("9998887766")
+                .submitForm();
 
 //        Check modal dialog
         practiceFormPage.checkTableAppearance()
