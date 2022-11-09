@@ -5,9 +5,6 @@ import com.demoqa.pages.PracticeFormPage;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-
 public class PracticeFormWithPageObjectsTest {
 
     PracticeFormPage practiceFormPage = new PracticeFormPage();
@@ -16,7 +13,6 @@ public class PracticeFormWithPageObjectsTest {
     static void setUp() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-
     }
 
     @Test
@@ -49,7 +45,6 @@ public class PracticeFormWithPageObjectsTest {
                 .checkValueInTable("Picture", "cat.jpg")
                 .checkValueInTable("Address", "Current Address")
                 .checkValueInTable("State and City", "NCR Delhi");
-
     }
 
     @Test
@@ -67,7 +62,5 @@ public class PracticeFormWithPageObjectsTest {
                 .checkValueInTable("Student Name", "FirstName2 LastName2")
                 .checkValueInTable("Gender", "Male")
                 .checkValueInTable("Mobile", "9998887766");
-
     }
-
 }
